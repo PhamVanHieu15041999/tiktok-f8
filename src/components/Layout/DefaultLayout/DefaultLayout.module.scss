@@ -1,0 +1,16 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    width: var(--layout-Default-width);
+    justify-content: space-between;
+}
+
+.content {
+    width: 692px;
+    max-width: 692px;
+}
