@@ -24,3 +24,13 @@ body {
     line-height: 1.5;
     text-rendering: optimizespeed;
 }
+
+input,
+button {
+    outline: none;
+    border: none;
+}
+
+a {
+    text-decoration: none;
+}

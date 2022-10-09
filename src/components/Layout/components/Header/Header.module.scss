@@ -1,4 +1,6 @@
 .wrapper {
+    --width-search-button: 52px;
+
     display: flex;
     justify-content: center;
     height: 60px;
@@ -10,5 +12,84 @@
     width: var(--layout-Default-width);
     height: 100%;
     padding: 0 20px;
-    background-color: #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .search,
+    .search_result {
+        width: 360px;
+    }
+
+    .search {
+        height: 46px;
+        padding-left: 16px;
+        background: rgba(22, 24, 35, 0.06);
+        border-radius: 92px;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        position: relative;
+        border: 1.5px solid transparent;
+
+        input {
+            flex: 1;
+            height: 100%;
+            font-size: 1.6rem;
+            line-height: 22px;
+            background: transparent;
+            caret-color: var(--primary);
+            color: rgba(22, 24, 35, 1);
+        }
+
+        input:not(:placeholder-shown) ~ .search_button {
+            color: rgba(22, 24, 35, 0.75);
+        }
+
+        &:focus-within {
+            border-color: rgba(22, 24, 35, 0.2);
+        }
+
+        &_title {
+            color: rgba(22, 24, 35, 0.5);
+            font-size: 1.4rem;
+            line-height: 20px;
+            padding: 5px 12px;
+            font-weight: 600;
+        }
+
+        &_icon {
+            margin: 0 12px;
+            display: flex;
+            align-items: center;
+        }
+
+        &_button {
+            width: var(--width-search-button);
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(22, 24, 35, 0.34);
+            font-size: 1.8rem;
+
+            &:hover {
+                background: rgba(22, 24, 35, 0.03);
+                cursor: pointer;
+            }
+
+            &:active {
+                background: rgba(22, 24, 35, 0.06);
+            }
+        }
+
+        &::after {
+            position: absolute;
+            content: '';
+            height: 28px;
+            width: 1px;
+            background: rgba(22, 24, 35, 0.12);
+            right: var(--width-search-button);
+        }
+    }
 }
