@@ -92,4 +92,9 @@
             right: var(--width-search-button);
         }
     }
+
+    .action {
+        display: flex;
+        align-items: center;
+    }
 }

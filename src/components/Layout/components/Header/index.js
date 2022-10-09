@@ -7,6 +7,7 @@ import Tippy from '@tippyjs/react/headless';
 import { useState } from 'react';
 import { WrapperPopper } from '~/components/Popper';
 import AccountItem from '~/components/AccountItem';
+import Button from '~/components/Button';
 
 function Header() {
     const cx = classNames.bind(styles);
@@ -35,6 +36,7 @@ function Header() {
                         <input
                             placeholder="Tìm kiếm tài khoản và video"
                             onChange={(e) => {
+                                console.log(e.target.value);
                                 setTextSearch(e.target.value);
                             }}
                             spellCheck={false}
@@ -48,7 +50,12 @@ function Header() {
                         </button>
                     </div>
                 </Tippy>
-                <div className={cx('action')}></div>
+                <div className={cx('action')}>
+                    <Button primary text>
+                        Upload
+                    </Button>
+                    <Button primary>Log in</Button>
+                </div>
             </div>
         </div>
     );
